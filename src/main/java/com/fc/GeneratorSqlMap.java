@@ -18,7 +18,7 @@ public class GeneratorSqlMap {
         try {
             List<String> warnings = new ArrayList<>();
             //指定 逆向工程配置文件
-            File configFile = new File("D:/JavaCode/project/PMS/src/main/resources/generatorConfig.xml");
+            File configFile = new File("C:/Users/aa453/Desktop/wuye/src/main/resources/generatorConfig.xml");
             ConfigurationParser cp = new ConfigurationParser(warnings);
             Configuration config = cp.parseConfiguration(configFile);
             DefaultShellCallback callback = new DefaultShellCallback(true);
