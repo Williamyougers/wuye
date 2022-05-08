@@ -1,13 +1,13 @@
-package com.fc.PMS;
+package com.fc.wuye;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PmsApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PmsApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }
