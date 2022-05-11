@@ -66,7 +66,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../static/index2.jsp"> <img alt="Charisma Logo" src="../img/logo20.png" class="hidden-xs"/>
+            <a class="navbar-brand" href="../index2.jsp"> <img alt="Charisma Logo" src="../img/logo20.png" class="hidden-xs"/>
                 <span>物业管理系统</span></a>
 
             <!-- user dropdown starts -->
@@ -95,7 +95,7 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">功能</li>
-							<li><a class="ajax-link" href="../static/index2.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
+							<li><a class="ajax-link" href="../index2.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
 							<li><a class="ajax-link" href="../notice?action=listforuser"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;查&ensp;询</span></a>
 							<li><a class="ajax-link" href="../custom?action=change&accountid=session.getAccountid();"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;修&ensp;改&ensp;密&ensp;码</span></a>
 							<li class="active"><a class="ajax-link" href="../main?action=maintainUserList&username=${customAccount.username }"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
@@ -125,7 +125,7 @@
             <div>
     <ul class="breadcrumb">
         <li>
-            <a href="../static/index2.jsp">首页</a>
+            <a href="../index2.jsp">首页</a>
         </li>
         <li>
             <a href="../main?action=maintainUserList&username=${customAccount.username }">报修管理</a>

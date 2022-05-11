@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<% if (session.getAttribute("customAccount")==null) response.sendRedirect("META-INF/resources/static/login.jsp");%>
+<% if (session.getAttribute("customAccount")==null) response.sendRedirect("META-INF/resources/login.jsp");%>
     <!--
         ===
         This comment should NOT be removed.
