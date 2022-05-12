@@ -129,10 +129,10 @@
             <a href="index.jsp">首页</a>
         </li>
         <li>
-            <a href="adminList">管理员信息</a>
+            <a href="admin/adminList">管理员信息</a>
         </li>
         <li>
-            <a href="adminEdit">编辑</a>
+            <a href="admin/adminEdit">编辑</a>
         </li>
     </ul>
 </div>
@@ -151,7 +151,7 @@
                 </div>
             </div>
 			<div class="box-content">
-                <form action="admin?action=adminEdit" method="post" data-toggle="validator">
+                <form action="admin/adminEdit" method="post" data-toggle="validator">
                     <div class="form-group">
 						<div class="input-group col-md-3">
 							<%--@declare id="name"--%><label class="control-label" for="name">姓名*</label>

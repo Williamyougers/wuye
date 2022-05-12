@@ -77,7 +77,7 @@
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a href="user?action=logout">注销登录</a></li>
+                <li><a href="customAccount/logout">注销登录</a></li>
             </ul>
         </div>
         <!-- user dropdown ends -->
@@ -97,12 +97,12 @@
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">功能</li>
                       		<li><a class="ajax-link" href="index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
-							<li><a class="ajax-link" href="admin?action=adminList"><i class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="main?action=maintainList"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="notice?action=noticelist"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="inspection?action=inspectionList"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
-							<li class="active"><a class="ajax-link" href="custom?action=customAccountList"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="house?action=houseList"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
+							<li><a class="ajax-link" href="admin/adminList"><i class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
+							<li><a class="ajax-link" href="main/maintainList"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
+							<li><a class="ajax-link" href="notice/noticelist"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
+							<li><a class="ajax-link" href="inspection/inspectionList"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
+							<li class="active"><a class="ajax-link" href="custom/customAccountList"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
+							<li><a class="ajax-link" href="house/houseList"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
                         </li>
                     </ul>
                 </div>
@@ -128,7 +128,7 @@
                         <a href="index.jsp">首页</a>
                     </li>
                     <li>
-                        <a href="custom?action=customAccountList">业主信息</a>
+                        <a href="customAccount/customAccountList">业主信息</a>
                     </li>
                 </ul>
             </div>
@@ -171,11 +171,11 @@
 										<td>${customAccount.ownerid}</td>
 										<td>${customAccount.carid}</td>
 										<td class="center">
-                                            <a class="btn btn-info" href="custom?action=findById&accountid=${customAccount.accountid}">
+                                            <a class="btn btn-info" href="customAccount/findById&accountid=${customAccount.accountid}">
                                                 <i class="glyphicon glyphicon-edit icon-white"></i>
                                                 编&ensp;辑
                                             </a>
-                                            <a class="btn btn-danger" href="#" data-href="custom?action=customAccountDelete&accountid=${customAccount.accountid}" data-toggle="modal" data-target="#myModal">
+                                            <a class="btn btn-danger"  data-href="customAccount/customAccountDelete&accountid=${customAccount.accountid}" data-toggle="modal" data-target="#myModal">
                                                 <i class="glyphicon glyphicon-trash icon-white"></i>
                                                 删&ensp;除
                                             </a>

@@ -76,7 +76,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="../user?action=logout">注销登录</a></li>
+                    <li><a href="/admin/logout">注销登录</a></li>
                 </ul>
             </div>
             <!-- user dropdown ends -->
@@ -129,10 +129,10 @@
             <a href="index.jsp">首页</a>
         </li>
         <li>
-            <a href="admin-list.jsp">管理员信息</a>
+            <a href="admin/adminList">管理员信息</a>
         </li>
         <li>
-            <a href="admin-add.jsp">添加</a>
+            <a href="admin/adminAdd">添加</a>
         </li>
     </ul>
 </div>

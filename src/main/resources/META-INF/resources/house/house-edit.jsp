@@ -129,10 +129,10 @@
                 <a href="index.jsp">首页</a>
             </li>
             <li>
-                <a href="house?action=houseList">房产信息</a>
+                <a href="house-list.jsp">房产信息</a>
             </li>
         	<li>
-            <a href="#">编辑</a>
+            <a href="house/houseEdit">编辑</a>
         </li>
     </ul>
 </div>
@@ -151,7 +151,7 @@
                 </div>
             </div>
 			<div class="box-content">
-                <form role="form" action="house?action=houseEdit" data-toggle="validator modal" method="post">
+                <form role="form" action="house/houseEdit" data-toggle="validator modal" method="post">
                     <div class="form-group">
 						<div class="input-group col-md-3">
 							<label class="control-label">门牌号*</label>
@@ -172,7 +172,7 @@
 							<select data-rel="chosen" name="type">
 							<option value="${house.type }">${house.type }</option>							
                             	<option value="独栋">独栋</option>
-                            	<option value="多层">多层</option>
+                                <option value="多层">多层</option>
                             	<option value="小高层">小高层</option>
                             	<option value="高层">高层</option>
                             </select>
