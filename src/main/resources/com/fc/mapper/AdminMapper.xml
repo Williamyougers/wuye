@@ -12,6 +12,13 @@
     <result column="addr" jdbcType="VARCHAR" property="addr" />
     <result column="memo" jdbcType="VARCHAR" property="memo" />
   </resultMap>
+
+<!--  <select id="select" resultType="com.fc.entity.Admin">-->
+<!--    select * from admin where username =#{name}-->
+<!--  </select>-->
+
+
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -104,7 +111,7 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.fc.entity.Admin">
-    insert into admin (id, name, password, 
+    insert into admin (id, name, password,
       sex, age, tel, phone, 
       addr, memo)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 

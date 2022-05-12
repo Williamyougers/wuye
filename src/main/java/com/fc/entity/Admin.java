@@ -1,5 +1,4 @@
 package com.fc.entity;
-
 public class Admin {
     private Integer id;
 

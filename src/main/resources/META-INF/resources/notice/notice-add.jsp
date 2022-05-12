@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<% if (session.getAttribute("admin")==null) response.sendRedirect("../login.jsp");%>
+	<% if (session.getAttribute("admin")==null) response.sendRedirect("login.jsp");%>
     <!--
         ===
         This comment should NOT be removed.
@@ -127,13 +127,13 @@
             <div>
     <ul class="breadcrumb">
        <li>
-           <a href="../static/index.jsp">首页</a>
+           <a href="index.jsp">首页</a>
        </li>
        <li>
-           <a href="oticelist">公告管理</a>
+           <a href="notice-list.jsp">公告管理</a>
        </li>
        <li>
-            <a href="#">添加</a>
+            <a href="notice-add.jsp">添加</a>
        </li>
     </ul>
 </div>
@@ -152,7 +152,7 @@
                 </div>
             </div>
 			<div class="box-content">
-                <form role="form" action="oticeadd" data-toggle="validator" method="POST">
+                <form role="form" action="noticeadd" data-toggle="validator" method="POST">
 				<fieldset>
                     <div class="form-group">
 						<div class="input-group col-md-3">
