@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<% if (session.getAttribute("admin")==null) response.sendRedirect("../login.jsp");%>
+<%--	<% if (session.getAttribute("admin")==null) response.sendRedirect("../login.jsp");%>--%>
     <!--
         ===
         This comment should NOT be removed.
@@ -60,13 +60,13 @@
     <div class="navbar navbar-default" role="navigation">
 
         <div class="navbar-inner">
-            <button type="button" class="navbar-toggle pull-left animated flip">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.jsp"> <img alt="Charisma Logo" src="../static/img/logo20.png" class="hidden-xs"/>
+<%--            <button type="button" class="navbar-toggle pull-left animated flip">--%>
+<%--                <span class="sr-only">Toggle navigation</span>--%>
+<%--                <span class="icon-bar"></span>--%>
+<%--                <span class="icon-bar"></span>--%>
+<%--                <span class="icon-bar"></span>--%>
+<%--            </button>--%>
+            <a class="navbar-brand" href="../index.jsp"> <img alt="Charisma Logo" src="../img/logo20.png" class="hidden-xs"/>
                 <span>物业管理系统</span></a>
 
             <!-- user dropdown starts -->
@@ -76,7 +76,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="logout">注销登录</a></li>
+                    <li><a href="adminlogout">注销登录</a></li>
                 </ul>
             </div>
             <!-- user dropdown ends -->
@@ -95,13 +95,13 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">功能</li>
-							<li><a class="ajax-link" href="index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
+							<li><a class="ajax-link" href="../index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
 							<li class="active"><a class="ajax-link" href="admin/adminList"><i class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="maintain/maintainList"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="notice/noticelist"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="inspection/inspectionList"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
-							<li><a class="ajax-link" href="customAccount/customAccountList"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="house/houseList"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
+							<li><a class="ajax-link" href="maintainList"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
+							<li><a class="ajax-link" href="noticelist"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
+							<li><a class="ajax-link" href="inspectionList"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
+							<li><a class="ajax-link" href="customAccountList"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
+							<li><a class="ajax-link" href="houseList"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
                         </li>
                                               
                     </ul>
@@ -129,10 +129,10 @@
             <a href="index.jsp">首页</a>
         </li>
         <li>
-            <a href="admin?action=adminList">管理员信息</a>
+            <a href="adminList">管理员信息</a>
         </li>
         <li>
-            <a href="#">编辑</a>
+            <a href="adminEdit">编辑</a>
         </li>
     </ul>
 </div>
