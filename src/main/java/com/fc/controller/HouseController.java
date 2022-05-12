@@ -15,11 +15,9 @@ import java.util.List;
 public class HouseController {
     @Autowired
     private HouseService houseService;
-    @RequestMapping("houseList")
-    public List<House> houseList(House house,
-                                 Model model,
-                                 Integer pageNum, Integer pageSize){
-        List<House> resultVo =  houseService.findAll(house,pageNum,pageSize,model);
+    @RequestMapping("houselist")
+    public List<House> houseList(){
+        List<House> resultVo =  houseService.findAll();
         model.addAttribute("forward:house/house-list.jsp");
         return resultVo;
     }

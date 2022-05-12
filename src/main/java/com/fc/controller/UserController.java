@@ -23,26 +23,62 @@ public class UserController {
 
     @RequestMapping("adminLogin")
 
-    public ModelAndView adminLogin(ModelAndView mv,
+    public ModelAndView adminLogin(Admin admin,
+                                   ModelAndView mv,
                                    HttpSession session,
-                                   String username , String password
+                                   String username ,
+                                   String password,
+                                   HttpServletResponse response
                                    ){
 
-        System.err.println(username);
-       ResultVo result= userService.adminLogin(username,password);
-        Cookie cookie ;
-        if (result.getCode() == 1){
-           session.setAttribute("admin",result.getData());
-            cookie = new Cookie("JSESSIONID",session.getId());
-           cookie.setMaxAge(30*60);
+//        System.err.println(username);
+//        System.err.println(password);
+//       ResultVo result= userService.adminLogin(username,password);
+//        Cookie cookie ;
+//        if (result.getCode() == 1){
+//           session.setAttribute("admin",result.getData());
+//            cookie = new Cookie("JSESSIONID",session.getId());
+//           cookie.setMaxAge(30*60);
+//           mv.setViewName("forward:../index.jsp");
+//       }else {
+////           cookie.setMaxAge(0);
+//           mv.setViewName("redirect:/login.jsp");
+//       }
+//       return mv;
+        // 调用业务层的登录方法
+        ResultVo resultVo = userService.adminLogin(admin.getName(), admin.getPassword());
+        Cookie cookie;
+        // 登录成功的情况
+        if (resultVo.getCode() == 200) {
 
-           mv.setViewName("redirect:/index.jsp");
-       }else {
-//           cookie.setMaxAge(0);
-           mv.setViewName("redirect:/login.jsp");
-       }
-       return mv;
+            session.setAttribute("admin", resultVo.getData());
+
+                cookie = new Cookie("JSESSIONID", session.getId());
+
+                // 半个钟头
+                cookie.setMaxAge(30 * 60);
+            } else {
+                cookie = new Cookie("JSESSIONID", null);
+
+                // 浏览器关闭时自动销毁
+                cookie.setMaxAge(-1);
+            }
+
+            // 发送到浏览器
+            response.addCookie(cookie);
+
+            mv.setViewName("/index.jsp");
+            return mv;
+//        } else {
+//            // 登录失败的情况
+//            mv.addObject("resultInfo", resultVo);
+//            mv.setViewName("redirect:/login.jsp");
+//        }
+
+
     }
+
+
 //    @RequestMapping("adminLogout")
 //    public ModelAndView adminLogout(ModelAndView mv,
 //                                   HttpSession session,
