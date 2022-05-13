@@ -9,5 +9,5 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 public interface HouseService {
-    List<House> findAll(House house,Integer pageNum, Integer pageSize);
+    List<House> findAll(Integer pageNum, Integer pageSize);
 }

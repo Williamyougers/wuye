@@ -20,7 +20,7 @@ private HouseMapper houseMapper;
     ModelAndView mv;
 
     @Override
-    public List<House> findAll(House house,Integer pageNum, Integer pageSize) {
+    public List<House> findAll(Integer pageNum, Integer pageSize) {
 
         PageHelper.startPage(pageNum,pageSize);
         List<House> list = houseMapper.findAll();

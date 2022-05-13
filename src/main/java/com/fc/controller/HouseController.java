@@ -17,9 +17,9 @@ public class HouseController {
     @Autowired
     private HouseService houseService;
     ModelAndView mv;
-    @RequestMapping("houselist")
-    public List<House> houseList(House house,Integer pageNum,Integer pageSize){
-        List<House> resultVo =  houseService.findAll(house,pageNum,pageSize);
+    @RequestMapping("houseList")
+    public List<House> houseList(Integer pageNum,Integer pageSize){
+        List<House> resultVo =  houseService.findAll(pageNum,pageSize);
 mv.addObject("house");
 mv.setViewName("forward:/house/house-list.jsp");
         return resultVo;
