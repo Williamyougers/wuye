@@ -3,8 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-<%--    META-INF/resources/static/login.jsp--%>
-<%--	<% if (session.getAttribute("admin")==null) response.sendRedirect("/static/login.jsp");%>--%>
+<%--	<% if (session.getAttribute("admin")==null) response.sendRedirect("./login.jsp");%>--%>
     <!--
         ===e
         This comment should NOT be removed.
@@ -76,7 +75,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a/user/adminlogout">注销登录</a></li>
+                    <li><a href="user/logout">注销登录</a></li>
                 </ul>
             </div>
             <!-- user dropdown ends -->
@@ -95,7 +94,7 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">功能</li>
-							<li><a class="ajax-link" href="index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
+							<li><a class="ajax-link" href="../index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
 							<li><a class="ajax-link" href="admin/adminList"><i class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
 							<li><a class="ajax-link" href="maintain/maintainList"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
 							<li><a class="ajax-link" href="notice/noticelist"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
