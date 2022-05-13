@@ -69,7 +69,7 @@
             <div class="alert alert-info">
                 请输入用户名和密码.
             </div>
-            <form data-toggle="validator" class="form-horizontal" action="/user/adminLogin"  method="post">
+            <form data-toggle="validator" class="form-horizontal" action="/user/login"  method="post">
                 <fieldset>
                   <div class="form-group col-md-12">
                     <div class="input-group input-group-lg">

@@ -1,5 +1,6 @@
 package com.fc.controller;
 
+import com.fc.entity.Admin;
 import com.fc.entity.House;
 import com.fc.service.HouseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +16,12 @@ import java.util.List;
 public class HouseController {
     @Autowired
     private HouseService houseService;
+    ModelAndView mv;
     @RequestMapping("houselist")
-    public List<House> houseList(){
-        List<House> resultVo =  houseService.findAll();
-        model.addAttribute("forward:house/house-list.jsp");
+    public List<House> houseList(House house,Integer pageNum,Integer pageSize){
+        List<House> resultVo =  houseService.findAll(house,pageNum,pageSize);
+mv.addObject("house");
+mv.setViewName("forward:/house/house-list.jsp");
         return resultVo;
     }
 }

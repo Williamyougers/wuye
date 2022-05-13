@@ -4,7 +4,9 @@ import com.fc.entity.CustomAccount;
 import com.fc.entity.CustomAccountExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface CustomAccountMapper {
     long countByExample(CustomAccountExample example);
 

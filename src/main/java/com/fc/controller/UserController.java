@@ -1,6 +1,7 @@
 package com.fc.controller;
 
 import com.fc.entity.Admin;
+import com.fc.service.AdminService;
 import com.fc.service.UserService;
 import com.fc.vo.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,29 +19,32 @@ import javax.servlet.http.HttpSession;
 public class UserController {
     @Autowired
     private UserService userService;
-
-    @RequestMapping("adminLogin")
-public String loginPage() {
-    return "login";
-}
+    @Autowired
+    private AdminService adminService;
 
     @PostMapping("login")
-    public String login(String username, String password, HttpSession session) {
+    public String login(String username, String password, @RequestParam String usertype, HttpSession session) {
+        ResultVo vo;
+        if (usertype.equals("user")) {
+            vo = userService.login(username, password);
+        } else {
+            vo = adminService.login(username, password);
+        }
 
-        Admin admin = userService.login(username, password);
 
-        if (admin != null) {
-            session.setAttribute("username", username);
+        if (vo.getSuccess()) {
+            //  如果是200说明是用户登录成功
+            if (vo.getCode().equals(200)) {
+                session.setAttribute("admin", vo.getData());
 
-            if (admin.getName().equals("admin")) {
-                return "redirect:/admin/adminList";
-            } else if (admin.getName().equals("teacher")) {
-                return "redirect:/teacher/showCourse";
-            } else if (admin.getName().equals("student")) {
-                return "redirect:/student/showCourse";
+                return "forward:/index2.jsp";
+            } else {
+                session.setAttribute("admin", vo.getData());
+
+                return "forward:/index.jsp";
             }
         }
 
-        return "login";
+        return null;
     }
 }

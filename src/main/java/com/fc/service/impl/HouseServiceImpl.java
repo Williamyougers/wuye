@@ -17,12 +17,16 @@ import java.util.List;
 public class HouseServiceImpl implements HouseService {
 @Autowired
 private HouseMapper houseMapper;
+    ModelAndView mv;
+
     @Override
-    public List<House> findAll(House house, Integer pageNum, Integer pageSize, Model model) {
-        PageHelper.startPage(pageNum,3);
+    public List<House> findAll(House house,Integer pageNum, Integer pageSize) {
+
+        PageHelper.startPage(pageNum,pageSize);
         List<House> list = houseMapper.findAll();
         PageInfo<House> pageInfo = new PageInfo<>(list);
-        model.addAttribute("pageInfo",pageInfo);
+        mv.addObject("pageInfo",pageInfo);
+
         return list;
     }
 }
