@@ -4,7 +4,9 @@ import com.fc.entity.House;
 import com.fc.entity.HouseExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface HouseMapper {
     long countByExample(HouseExample example);
 
@@ -27,4 +29,6 @@ public interface HouseMapper {
     int updateByPrimaryKeySelective(House record);
 
     int updateByPrimaryKey(House record);
+
+    List<House> findAll();
 }

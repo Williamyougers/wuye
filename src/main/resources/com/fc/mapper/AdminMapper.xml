@@ -13,9 +13,9 @@
     <result column="memo" jdbcType="VARCHAR" property="memo" />
   </resultMap>
 
-<!--  <select id="select" resultType="com.fc.entity.Admin">-->
-<!--    select * from admin where username =#{name}-->
-<!--  </select>-->
+  <select id="select" resultType="com.fc.entity.Admin">
+    select * from admin where name =#{name}
+  </select>
 
 
 

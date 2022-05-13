@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<%--<% if (session.getAttribute("admin")==null) response.sendRedirect("../index.jsp");%>--%>
+<% if (session.getAttribute("admin")==null) response.sendRedirect("../login.jsp");%>
     <!--
         ===
         This comment should NOT be removed.
@@ -28,7 +28,7 @@
     <link id="bs-css" href="../css/bootstrap-cerulean.min.css" rel="stylesheet">
 
     <link href="../css/charisma-app.css" rel="stylesheet">
-    <link href='../bo wer_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
+    <link href='../bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
     <link href='../bower_components/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print'>
     <link href='../bower_components/chosen/chosen.min.css' rel='stylesheet'>
     <link href='../bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
@@ -76,7 +76,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="/admin/adminLogout">注销登录</a></li>
+                    <li><a href="../user?action=logout">注销登录</a></li>
                 </ul>
             </div>
             <!-- user dropdown ends -->
@@ -96,12 +96,12 @@
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">功能</li>
 							<li><a class="ajax-link" href="../index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
-							<li class="active"><a class="ajax-link" href="admin/adminList"><i class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="/maintain/maintainList"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="/notice/noticelist"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="/inspection/inspectionList"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
-							<li><a class="ajax-link" href="/customAccount/customAccountList"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="/house/houseList"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
+							<li class="active"><a class="ajax-link" href="adminList"><i class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
+							<li><a class="ajax-link" href="../main?action=maintainList"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
+							<li><a class="ajax-link" href="../notice?action=noticelist"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
+							<li><a class="ajax-link" href="../inspection?action=inspectionList"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
+							<li><a class="ajax-link" href="../custom?action=customAccountList"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
+							<li><a class="ajax-link" href="../house?action=houseList"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
                         </li>
                                               
                     </ul>
@@ -126,13 +126,13 @@
             <div>
     <ul class="breadcrumb">
         <li>
-            <a href="index.jsp">首页</a>
+            <a href="../index.jsp">首页</a>
         </li>
         <li>
-            <a href="admin/adminList">管理员信息</a>
+            <a href="adminList">管理员信息</a>
         </li>
         <li>
-            <a href="admin/adminAdd">添加</a>
+            <a href="#">添加</a>
         </li>
     </ul>
 </div>
@@ -154,14 +154,14 @@
                 <form action="adminAdd" method="post" data-toggle="validator">
                     <div class="form-group">
 						<div class="input-group col-md-3">
-							<%--@declare id="name"--%><label class="control-label" for="name">姓名*</label>
-							<input type="text" class="form-control" name="name" required/>
+							<label class="control-label" for="name">姓名*</label>
+							<input type="text" class="form-control" name="name" / required>
 							<span class="help-block with-errors"></span>
 						</div>
                     </div>
                     <div class="form-group">
 						<div class="input-group col-md-3">
-							<%--@declare id="password"--%><label for="password">密码*</label>
+							<label for="password">密码*</label>
 							<input type="password" class="form-control" name="password" pattern="^[a-z0-9_]{6,18}$" data-error="密码格式错误" id="Password1" required/>
 							<span class="help-block with-errors">密码由字母 数字或下划线组成，6位以上</span>
 						</div> 
@@ -184,33 +184,33 @@
 					</div>
 					<div class="form-group">
 						<div class="input-group col-md-1">
-							<%--@declare id="age"--%><label class="control-label" for="age">年龄*</label>
+							<label class="control-label" for="age">年龄*</label>
 							<input type="number" class="form-control" name="age" required/>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="input-group col-md-3">
-							<%--@declare id="tel"--%><label class="control-label" for="tel">电话</label>
+							<label class="control-label" for="tel">电话</label>
 							<input type="text" class="form-control" name="tel" />
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="input-group col-md-3">
-							<%--@declare id="phone"--%><label class="control-label" for="phone">手机</label>
+							<label class="control-label" for="phone">手机</label>
 							<input type="text" class="form-control" name="phone" />
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="input-group col-md-4">
-							<%--@declare id="addr"--%><label class="control-label" for="addr">地址*</label>
+							<label class="control-label" for="addr">地址*</label>
 							<input type="text" class="form-control" name="addr" required/>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="input-group col-md-4">
-							<%--@declare id="memo"--%><label class="control-label" for="memo">备注</label>
+							<label class="control-label" for="memo">备注</label>
 							<input type="text" class="form-control" name="memo" />
 						</div>
 					</div>
