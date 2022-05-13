@@ -171,11 +171,11 @@
 										<td>${customAccount.ownerid}</td>
 										<td>${customAccount.carid}</td>
 										<td class="center">
-                                            <a class="btn btn-info" href="customAccount/findById&accountid=${customAccount.accountid}">
+                                            <a class="btn btn-info" href="/customAccount/findById?accountid=${customAccount.accountid}">
                                                 <i class="glyphicon glyphicon-edit icon-white"></i>
                                                 编&ensp;辑
                                             </a>
-                                            <a class="btn btn-danger"  data-href="customAccount/customAccountDelete&accountid=${customAccount.accountid}" data-toggle="modal" data-target="#myModal">
+                                            <a class="btn btn-danger"  data-href="/customAccount/customAccountDelete?accountid=${customAccount.accountid}" data-toggle="modal" data-target="#myModal">
                                                 <i class="glyphicon glyphicon-trash icon-white"></i>
                                                 删&ensp;除
                                             </a>

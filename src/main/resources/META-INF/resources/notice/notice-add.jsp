@@ -152,7 +152,7 @@
                 </div>
             </div>
 			<div class="box-content">
-                <form role="form" action="noticeadd" data-toggle="validator" method="POST">
+                <form role="form" action="/notice/noticeAdd" data-toggle="validator" method="POST">
 				<fieldset>
                     <div class="form-group">
 						<div class="input-group col-md-3">
