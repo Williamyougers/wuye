@@ -73,7 +73,7 @@
             <!-- user dropdown starts -->
             <div class="btn-group pull-right">
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> ${admin.name}</span>
+                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> ${name}</span>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
@@ -97,16 +97,12 @@
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">功能</li>
 							<li><a class="ajax-link" href="../index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
-							<li><a class="ajax-link" href="../admin?action=adminList"><i class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
-							<li class="active"><a class="ajax-link" href="..
-
-							‘’
-							；‘
-							；/main?action=maintainList"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="../notice?action=noticelist"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="../inspection?action=inspectionList"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
-							<li><a class="ajax-link" href="../custom?action=customAccountList"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="../house?action=houseList"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
+							<li><a class="ajax-link" href="../admin/adminList"><i class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
+							<li class="active"><a class="ajax-link" href="/maintain/maintainList"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
+							<li><a class="ajax-link" href="../notice/noticeList"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
+							<li><a class="ajax-link" href="../inspection/inspectionList"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
+							<li><a class="ajax-link" href="../custom/customAccountList"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
+							<li><a class="ajax-link" href="../house/houseList"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
                         </li>
                                               
                     </ul>
@@ -131,13 +127,13 @@
             <div>
     <ul class="breadcrumb">
          <li>
-                <a href="../index.jsp">首页</a>
+                <a href="/index.jsp">首页</a>
          </li>
          <li>
-                <a href="../main?action=maintainList">报修管理</a>
+                <a href="/maintain/maintainList">报修管理</a>
          </li>
           <li>
-                <a href="#">添加</a>
+                <a href="/maintain/maintainAdd">添加</a>
           </li>
     </ul>
 </div>
@@ -156,7 +152,7 @@
                 </div>
             </div>
 			<div class="box-content">
-                <form role="form" data-toggle="validator" action="../main?action=maintainAdd" method="post">
+                <form role="form" data-toggle="validator" action="../maintain/maintainAdd" method="post">
 				<fieldset>
                     <div class="form-group">
                         <div class="input-group col-md-3">

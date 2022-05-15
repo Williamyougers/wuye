@@ -126,13 +126,13 @@
             <div>
     <ul class="breadcrumb">
     		<li>
-                <a href="index.jsp">首页</a>
+                <a href="/index.jsp">首页</a>
             </li>
             <li>
-                <a href="house/houseList">房产信息</a>
+                <a href="/house/houseList">房产信息</a>
             </li>
         	<li>
-            <a href="#">编辑</a>
+            <a href="house/houseEdit">编辑</a>
         </li>
     </ul>
 </div>
