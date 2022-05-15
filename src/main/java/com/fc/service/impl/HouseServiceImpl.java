@@ -2,6 +2,7 @@ package com.fc.service.impl;
 
 import com.fc.dao.HouseMapper;
 import com.fc.entity.House;
+import com.fc.entity.HouseExample;
 import com.fc.service.HouseService;
 import com.fc.vo.ResultVo;
 import com.github.pagehelper.PageHelper;
@@ -15,18 +16,22 @@ import java.util.List;
 
 @Service
 public class HouseServiceImpl implements HouseService {
-@Autowired
-private HouseMapper houseMapper;
-    ModelAndView mv;
+    @Autowired
+    private HouseMapper houseMapper;
 
     @Override
-    public List<House> findAll(House house,Integer pageNum, Integer pageSize) {
+    public List<House> findByOwnerId(String id) {
+        HouseExample example = new HouseExample();
 
-        PageHelper.startPage(pageNum,pageSize);
-        List<House> list = houseMapper.findAll();
-        PageInfo<House> pageInfo = new PageInfo<>(list);
-        mv.addObject("pageInfo",pageInfo);
+        HouseExample.Criteria criteria = example.createCriteria();
 
-        return list;
+        criteria.andOwneridEqualTo(id);
+
+        return houseMapper.selectByExample(example);
+    }
+
+    @Override
+    public List<House> findAll(Integer pageNum, Integer pageSize) {
+        return houseMapper.selectByExample(null);
     }
 }

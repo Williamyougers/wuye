@@ -30,5 +30,5 @@ public interface HouseMapper {
 
     int updateByPrimaryKey(House record);
 
-    List<House> findAll();
+    List<House> findByOwnerId(@Param(("id")) Integer id);
 }

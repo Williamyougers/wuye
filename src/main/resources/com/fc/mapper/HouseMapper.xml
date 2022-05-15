@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.fc.dao.HouseMapper">
+  <select id="findByOwnerById" resultType="com.fc.entity.House">
+    select house.* from house
+    inner join custom_account ca
+        on house.ownerid = ca.ownerid
+    where id = #{id}
+  </select>
   <resultMap id="BaseResultMap" type="com.fc.entity.House">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="num" jdbcType="VARCHAR" property="num" />

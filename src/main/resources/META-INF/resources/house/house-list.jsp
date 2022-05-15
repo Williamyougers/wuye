@@ -28,23 +28,23 @@
     <!-- The styles -->
     <link id="bs-css" href="css/bootstrap-cerulean.min.css" rel="stylesheet">
 
-    <link href="css/charisma-app.css" rel="stylesheet">
-    <link href='bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
-    <link href='bower_components/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print'>
-    <link href='bower_components/chosen/chosen.min.css' rel='stylesheet'>
-    <link href='bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
-    <link href='bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
-    <link href='bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css' rel='stylesheet'>
-    <link href='css/jquery.noty.css' rel='stylesheet'>
-    <link href='css/noty_theme_default.css' rel='stylesheet'>
-    <link href='css/elfinder.min.css' rel='stylesheet'>
-    <link href='css/elfinder.theme.css' rel='stylesheet'>
-    <link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
-    <link href='css/uploadify.css' rel='stylesheet'>
-    <link href='css/animate.min.css' rel='stylesheet'>
+    <link href="/css/charisma-app.css" rel="stylesheet">
+    <link href='/bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
+    <link href='/bower_components/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print'>
+    <link href='/bower_components/chosen/chosen.min.css' rel='stylesheet'>
+    <link href='/bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
+    <link href='/bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
+    <link href='/bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css' rel='stylesheet'>
+    <link href='/css/jquery.noty.css' rel='stylesheet'>
+    <link href='/css/noty_theme_default.css' rel='stylesheet'>
+    <link href='/css/elfinder.min.css' rel='stylesheet'>
+    <link href='/css/elfinder.theme.css' rel='stylesheet'>
+    <link href='/css/jquery.iphone.toggle.css' rel='stylesheet'>
+    <link href='/css/uploadify.css' rel='stylesheet'>
+    <link href='/css/animate.min.css' rel='stylesheet'>
 
     <!-- jQuery -->
-    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="/bower_components/jquery/jquery.min.js"></script>
 
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -52,7 +52,7 @@
     <![endif]-->
 
     <!-- The fav icon -->
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
 </head>
 
@@ -153,8 +153,6 @@
                 <i class="glyphicon glyphicon-plus icon-white"></i>
                 &ensp;添&ensp;加&ensp;记&ensp;录
     </a>
-    <br/>
-    <br/>
     <tr>
         <th>门牌号</th>
         <th>楼号</th>
@@ -183,7 +181,7 @@
 			<td>${house.ownerid}</td>
 			<td>${house.memo}</td>
 	        <td class="center">
-	            <a class="btn btn-info" href="house?action=findById&id=${house.id}">
+	            <a class="btn btn-info" href="house?action=findById?id=${house.id}">
 	                <i class="glyphicon glyphicon-edit icon-white"></i>
 	                编&ensp;辑
 	            </a>
