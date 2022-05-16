@@ -16,7 +16,7 @@ public interface HouseMapper {
 
     int insert(House record);
 
-    int insertSelective(House record);
+    int insertSelective(House house);
 
     List<House> selectByExample(HouseExample example);
 

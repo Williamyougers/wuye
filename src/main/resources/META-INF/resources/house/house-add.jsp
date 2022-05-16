@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<% if (session.getAttribute("admin")==null) response.sendRedirect("../login.jsp");%>
+	<% if (session.getAttribute("admin")==null) response.sendRedirect("/login.jsp");%>
     <!--
         ===
         This comment should NOT be removed.
@@ -75,7 +75,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="../user?action=logout">注销登录</a></li>
+                    <li><a href="../user/logout">注销登录</a></li>
                 </ul>
             </div>
             <!-- user dropdown ends -->

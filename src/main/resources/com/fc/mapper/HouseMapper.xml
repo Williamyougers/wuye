@@ -112,7 +112,7 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.fc.entity.House">
-    insert into house (id, num, dep, 
+    insert into house(id, num, dep,
       type, area, sell, unit, 
       floor, direction, memo, 
       ownerid)
@@ -121,7 +121,7 @@
       #{floor,jdbcType=VARCHAR}, #{direction,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, 
       #{ownerid,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.fc.entity.House">
+  <insert id="insertSelective" keyProperty="id" useGeneratedKeys="true" parameterType="com.fc.entity.House">
     insert into house
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

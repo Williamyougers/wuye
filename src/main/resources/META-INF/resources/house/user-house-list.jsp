@@ -44,15 +44,15 @@
     <link href='/css/animate.min.css' rel='stylesheet'>
 
     <!-- jQuery -->
-    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="/bower_components/jquery/jquery.min.js"></script>
 
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="/http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
     <!-- The fav icon -->
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
 </head>
 
@@ -67,7 +67,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index2.jsp"> <img alt="Charisma Logo" src="img/logo20.png" class="hidden-xs"/>
+            <a class="navbar-brand" href="index2.jsp"> <img alt="Charisma Logo" src="/img/logo20.png" class="hidden-xs"/>
                 <span>物业管理系统</span></a>
 
             <!-- user dropdown starts -->
@@ -77,7 +77,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="user?action=logout">注销登录</a></li>
+                    <li><a href="/logout">注销登录</a></li>
                 </ul>
             </div>
             <!-- user dropdown ends -->
@@ -97,10 +97,10 @@
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">功能</li>
 							<li><a class="ajax-link" href="index2.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
-							<li><a class="ajax-link" href="notice?action=listforuser"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;查&ensp;询</span></a>
-							<li><a class="ajax-link" href="custom/change?accountid=session.getAccountid();"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;修&ensp;改&ensp;密&ensp;码</span></a>
-							<li><a class="ajax-link" href="main?action=maintainUserList?username=${customAccount.username }"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="custom?action=findById2?accountid=${customAccount.accountid }"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
+							<li><a class="ajax-link" href="notice/listforuser"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;查&ensp;询</span></a>
+							<li><a class="ajax-link" href="customAccount/change?accountid=session.getAccountid();"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;修&ensp;改&ensp;密&ensp;码</span></a>
+							<li><a class="ajax-link" href="maintain/maintainUserList?username=${customAccount.username }"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
+							<li><a class="ajax-link" href="customAccount/findById2?accountid=${customAccount.accountid }"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
 							<li class="active"><a class="ajax-link" href="house/findByOwnerid?ownerid=${customAccount.ownerid }"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
                         </li>                  
 					</ul>
@@ -227,37 +227,37 @@
 
 <!-- external javascript -->
 
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- library for cookie management -->
-<script src="js/jquery.cookie.js"></script>
-<!-- calender plugin -->
-<script src='bower_components/moment/min/moment.min.js'></script>
-<script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
-<!-- data table plugin -->
-<script src="js/jquery.dataTables.min.js"></script>
-<!-- select or dropdown enhancer -->
-<script src="bower_components/chosen/chosen.jquery.min.js"></script>
-<!-- plugin for gallery image view -->
-<script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
-<!-- notification plugin -->
-<script src="js/jquery.noty.js"></script>
-<!-- library for making tables responsive -->
-<script src="bower_components/responsive-tables/responsive-tables.js"></script>
-<!-- tour plugin -->
-<script src="bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
-<!-- star rating plugin -->
-<script src="js/jquery.raty.min.js"></script>
-<!-- for iOS style toggle switch -->
-<script src="js/jquery.iphone.toggle.js"></script>
-<!-- autogrowing textarea plugin -->
-<script src="js/jquery.autogrow-textarea.js"></script>
-<!-- multiple file upload plugin -->
-<script src="js/jquery.uploadify-3.1.min.js"></script>
-<!-- history.js for cross-browser state change on ajax -->
-<script src="js/jquery.history.js"></script>
-<!-- application script for Charisma demo -->
-<script src="js/charisma.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+/
+<!-- library /for cookie management -->
+<script src="/js/jquery.cookie.js"></script>
+<!-- calender/ plugin -->
+<script src='/bower_components/moment/min/moment.min.js'></script>
+<script src='/bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+<!-- data tab/le plugin -->
+<script src="/js/jquery.dataTables.min.js"></script>
+<!-- select o/r dropdown enhancer -->
+<script src="/bower_components/chosen/chosen.jquery.min.js"></script>
+<!-- plugin f/or gallery image view -->
+<script src="/bower_components/colorbox/jquery.colorbox-min.js"></script>
+<!-- notifica/tion plugin -->
+<script src="/js/jquery.noty.js"></script>
+<!-- library /for making tables responsive -->
+<script src="/bower_components/responsive-tables/responsive-tables.js"></script>
+<!-- tour plu/gin -->
+<script src="/bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
+<!-- star rat/ing plugin -->
+<script src="/js/jquery.raty.min.js"></script>
+<!-- for iOS /style toggle switch -->
+<script src="/js/jquery.iphone.toggle.js"></script>
+<!-- autogrow/ing textarea plugin -->
+<script src="/js/jquery.autogrow-textarea.js"></script>
+<!-- multiple/ file upload plugin -->
+<script src="/js/jquery.uploadify-3.1.min.js"></script>
+<!-- history./js for cross-browser state change on ajax -->
+<script src="/js/jquery.history.js"></script>
+<!-- applicat/ion script for Charisma demo -->
+<script src="/js/charisma.js"></script>
 <script>
 $('#myModal').on('show.bs.modal', function(e) {
     $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));

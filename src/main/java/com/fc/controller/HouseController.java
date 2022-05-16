@@ -3,13 +3,13 @@ package com.fc.controller;
 import com.fc.entity.Admin;
 import com.fc.entity.House;
 import com.fc.service.HouseService;
+import com.fc.vo.ResultVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -19,18 +19,16 @@ import java.util.List;
 public class HouseController {
     @Autowired
     private HouseService houseService;
-    ModelAndView mv;
 
     @RequestMapping("houseList")
-    public ModelAndView findByOwnerId(@RequestParam(defaultValue = "1") Integer pageNum,
-                                  @RequestParam(defaultValue = "3") Integer pageSize,
+    public ModelAndView houseList(@RequestParam(defaultValue = "1") Integer pageNum,
+                                  @RequestParam(defaultValue = "10000000") Integer pageSize,
                                   ModelAndView mv) {
-        PageHelper.startPage(pageNum,pageSize);
-
-        List<House> list = houseService.findAll(pageNum, pageSize);
+        PageHelper.startPage(pageNum, pageSize);
+        List<House> list = houseService.findAll();
         PageInfo<House> pageInfo = new PageInfo<>(list);
-        mv.addObject("house",pageInfo.getList());
-        mv.setViewName("forward:/house/house-list.jsp");
+        mv.addObject("houses", pageInfo.getList());
+        mv.setViewName("forward:house-list.jsp");
         return mv;
     }
 
@@ -42,6 +40,38 @@ public class HouseController {
 
         mv.setViewName("forward:/house/user-house-list.jsp");
 
+        return mv;
+    }
+
+    @PostMapping("houseAdd")
+    public ModelAndView houseAdd(ModelAndView mv, House house) {
+        ResultVo vo = houseService.add(house);
+        if (vo.getCode() == 200) {
+            mv.addObject("houses", vo.getData());
+            mv.setViewName("forward:houseList");
+        }
+        return mv;
+    }
+
+    @PostMapping("houseEdit")
+    public ModelAndView update(House house, ModelAndView mv) {
+        ResultVo id = houseService.findById(house.getId());
+        if (id.getCode() == 200) {
+            ResultVo vo = houseService.update(house);
+            if (vo.getCode() == 200) {
+                mv.addObject("houses", vo.getData());
+                mv.setViewName("forward:house-list.jsp");
+            }
+        }
+        return mv;
+    }
+
+    @PostMapping("houseDelete")
+    public ModelAndView delete(ModelAndView mv, Integer id) {
+        ResultVo vo = houseService.delete(id);
+        if (vo.getCode() == 200) {
+            mv.setViewName("forward:/house-list.jsp");
+        }
         return mv;
     }
 }
