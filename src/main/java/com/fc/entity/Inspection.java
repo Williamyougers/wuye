@@ -1,7 +1,10 @@
 package com.fc.entity;
 
-import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Repository;
 
+import java.util.Date;
+@Repository
 public class Inspection {
     private Integer id;
 
@@ -9,6 +12,7 @@ public class Inspection {
 
     private String type;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date itime;
 
     private String conductor;

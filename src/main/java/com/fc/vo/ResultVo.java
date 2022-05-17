@@ -6,8 +6,6 @@ import lombok.NoArgsConstructor;
 
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class ResultVo {
     private Integer code;
     private String message;

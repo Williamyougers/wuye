@@ -3,8 +3,12 @@ package com.fc.dao;
 import com.fc.entity.Inspection;
 import com.fc.entity.InspectionExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import com.fc.vo.ResultVo;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
+@Repository
 public interface InspectionMapper {
     long countByExample(InspectionExample example);
 
@@ -27,4 +31,8 @@ public interface InspectionMapper {
     int updateByPrimaryKeySelective(Inspection record);
 
     int updateByPrimaryKey(Inspection record);
+
+    ResultVo updateByPrimaryKey(@Param("id") Integer id);
+
+    int findById(@Param("id") Integer id);
 }

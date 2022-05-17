@@ -4,7 +4,9 @@ import com.fc.entity.Notice;
 import com.fc.entity.NoticeExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface NoticeMapper {
     long countByExample(NoticeExample example);
 
@@ -18,7 +20,7 @@ public interface NoticeMapper {
 
     List<Notice> selectByExample(NoticeExample example);
 
-    Notice selectByPrimaryKey(Integer id);
+    Notice selectByPrimaryKey(Long id);
 
     int updateByExampleSelective(@Param("record") Notice record, @Param("example") NoticeExample example);
 

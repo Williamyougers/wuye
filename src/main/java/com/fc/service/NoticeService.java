@@ -1,8 +1,15 @@
 package com.fc.service;
 
 import com.fc.entity.Notice;
-import com.fc.vo.ResultVO;
+import com.fc.vo.ResultVo;
+
+import java.util.List;
 
 public interface NoticeService {
-    ResultVO add(Notice notice);
+
+    ResultVo add(Notice notice);
+
+    List<Notice> getList();
+
+    ResultVo delete(Integer id);
 }

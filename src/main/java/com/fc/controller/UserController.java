@@ -35,7 +35,7 @@ public class UserController {
         if (vo.getSuccess()) {
             //  如果是200说明是用户登录成功
             if (vo.getCode().equals(200)) {
-                session.setAttribute("admin", vo.getData());
+                session.setAttribute("customAccount", vo.getData());
 
                 return "forward:/index2.jsp";
             } else {
@@ -46,5 +46,19 @@ public class UserController {
         }
 
         return null;
+    }
+    @GetMapping("logout")
+    public ModelAndView logout(ModelAndView mv,HttpSession session ,HttpServletResponse response){
+        //销毁session
+        session.invalidate();
+
+        Cookie cookie = new Cookie("JSESSIONID", null);
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+
+        mv.setViewName("redirect:/login.jsp");
+
+
+        return mv;
     }
 }

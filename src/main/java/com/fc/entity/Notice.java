@@ -1,14 +1,18 @@
 package com.fc.entity;
 
-import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Repository;
 
+import java.util.Date;
+@Repository
 public class Notice {
     private Integer id;
 
     private String content;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date ndate;
-
+   @DateTimeFormat
     private String title;
 
     private String uper;
