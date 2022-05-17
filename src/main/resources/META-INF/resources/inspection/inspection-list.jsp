@@ -181,7 +181,7 @@
                 <i class="glyphicon glyphicon-edit icon-white"></i>
                 编&ensp;辑
             </a>
-            <a class="btn btn-danger" href="inspection/inspectionDelete" data-href="inspection/inspectionDelete&id=${inspection.id}" data-toggle="modal" data-target="#myModal">
+            <a class="btn btn-danger" href="inspectionDelete" data-href="/inspection/inspectionDelete?id=${inspection.id}" data-toggle="modal" data-target="#myModal">
                 <i class="glyphicon glyphicon-trash icon-white"></i>
                 删&ensp;除
             </a>

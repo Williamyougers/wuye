@@ -36,5 +36,22 @@ public class InspectionServiceImpl implements InspectionService {
         return inspectionMapper.findById(id);
     }
 
+    @Override
+    public ResultVo delete(Integer id) {
+        ResultVo resultVo = new ResultVo();
+        int affectedRows = inspectionMapper.deleteByPrimaryKey(id);
+
+        if (affectedRows > 0) {
+            resultVo.setCode(1);
+            resultVo.setSuccess(true);
+            resultVo.setMessage("删除成功");
+        } else {
+            System.err.println("Fail");
+            resultVo.setSuccess(false);
+        }
+
+        return resultVo;
+    }
+
 
 }

@@ -49,15 +49,18 @@ public class InspectionController {
         return mv;
 
     }
-    @PostMapping ("findById")
-    public ModelAndView findById(ModelAndView mv, Inspection inspection){
-        int edit = inspectionService.edit(inspection.getId());
+    @GetMapping("inspectionDelete")
+    public ModelAndView inspectionDelete(Integer id, ModelAndView mv) {
+        ResultVo resultVo = inspectionService.delete(id);
+        System.err.println("resultVo" + resultVo);
 
-        mv.addObject("inspections",edit);
-
-        mv.setViewName("forward:inspection-edit.jsp");
+        if (resultVo.getSuccess().equals(true)) {
+            mv.setViewName("forward:inspectionList");
+        }
 
         return mv;
+
+
     }
 
 

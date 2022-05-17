@@ -13,4 +13,6 @@ public interface InspectionService{
 
 
     int edit(Integer id);
+
+    ResultVo delete(Integer id);
 }
