@@ -56,10 +56,8 @@ public class HouseController {
     @GetMapping("findById")
     public ModelAndView findById(Integer id,ModelAndView mv){
         House house = houseService.findById(id);
-        System.out.println(house.getDep());
         mv.addObject("house",house);
         mv.setViewName("house-edit.jsp");
-
         return mv;
     }
 
@@ -73,10 +71,11 @@ public class HouseController {
         return mv;
     }
 
-    @PostMapping("houseDelete")
+    @GetMapping("houseDelete")
     public ModelAndView delete(ModelAndView mv, Integer id) {
         ResultVo vo = houseService.delete(id);
         if (vo.getCode() == 200) {
+            mv.addObject("house",vo.getData());
             mv.setViewName("forward:houseList");
         }
         return mv;

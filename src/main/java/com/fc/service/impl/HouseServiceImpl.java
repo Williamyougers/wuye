@@ -83,11 +83,6 @@ public class HouseServiceImpl implements HouseService {
     @Override
     public ResultVo delete(Integer id) {
         ResultVo resultVo = new ResultVo();
-        if (id == null) {
-            resultVo.setCode(-1);
-            resultVo.setSuccess(false);
-            resultVo.setMessage("删除失败！");
-        } else {
             int affectedRows = houseMapper.deleteByPrimaryKey(id);
             if (affectedRows > 0) {
                 resultVo.setCode(200);
@@ -96,7 +91,6 @@ public class HouseServiceImpl implements HouseService {
             } else {
                 System.out.println("Fail");
             }
-        }
             return resultVo;
     }
 }
