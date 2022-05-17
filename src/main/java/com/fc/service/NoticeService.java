@@ -1,8 +1,8 @@
 package com.fc.service;
 
 import com.fc.entity.Notice;
-import com.fc.vo.ResultVO;
+import com.fc.vo.ResultVo;
 
 public interface NoticeService {
-    ResultVO add(Notice notice);
+    ResultVo add(Notice notice);
 }

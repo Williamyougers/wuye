@@ -132,7 +132,7 @@
             <a href="/admin/adminList">管理员信息</a>
         </li>
         <li>
-            <a href="/admin/admin-edit.jsp">编辑</a>
+            <a href="/admin/findById">编辑</a>
         </li>
     </ul>
 </div>
@@ -155,7 +155,7 @@
                     <div class="form-group">
 						<div class="input-group col-md-3">
 							<label class="control-label" for="name">姓名*</label>
-							<input type="text" class="form-control" name="name" value="${name}" required/>
+							<input type="text" class="form-control" name="name" value="${admin.name}" required/>
 							<span class="help-block with-errors"></span>
 						</div>
                     </div>
@@ -185,36 +185,36 @@
 					<div class="form-group">
 						<div class="input-group col-md-1">
 							<label class="control-label" for="age">年龄*</label>
-							<input type="number" class="form-control" name="age" value="${age}" required/>
+							<input type="number" class="form-control" name="age" value="${admin.age}" required/>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="input-group col-md-3">
 							<label class="control-label" for="tel">电话</label>
-							<input type="text" class="form-control" name="tel" value="${tel}"/>
+							<input type="text" class="form-control" name="tel" value="${admin.tel}"/>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="input-group col-md-3">
 							<label class="control-label" for="phone">手机</label>
-							<input type="text" class="form-control" name="phone" value="${phone}"/>
+							<input type="text" class="form-control" name="phone" value="${admin.phone}"/>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="input-group col-md-4">
 							<label class="control-label" for="addr">地址*</label>
-							<input type="text" class="form-control" name="addr" value="${addr}" required/>
+							<input type="text" class="form-control" name="addr" value="${admin.addr}" required/>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="input-group col-md-4">
 							<label class="control-label" for="memo">备注</label>
-							<input type="text" class="form-control" name="memo" value="${memo}"/>
+							<input type="text" class="form-control" name="memo" value="${admin.memo}"/>
 						</div>
 					</div>
-					<input type="hidden" name="id"  value="${id}">
+					<input type="hidden" name="id"  value="${admin.id}">
                     <input type="submit" class="btn btn-info" value="保存"></button>
                 </form>
 

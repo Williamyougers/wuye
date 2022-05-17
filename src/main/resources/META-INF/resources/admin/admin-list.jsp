@@ -115,7 +115,7 @@
             <div class="alert alert-block col-md-12">
                 <h4 class="alert-heading">Warning!</h4>
 
-                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+                <p>You need to have <a href="/http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
                     enabled to use this site.</p>
             </div>
         </noscript>
@@ -179,11 +179,11 @@
                                         <td>${admin.addr}</td>
                                         <td>${admin.memo}</td>
                                         <td class="center">
-                                            <a class="btn btn-info" href="/admin/findById?id=${id}">
+                                            <a class="btn btn-info" href="/admin/findById?id=${admin.id}">
                                                 <i class="glyphicon glyphicon-edit icon-white"></i>
                                                 编&ensp;辑
                                             </a>
-                                            <a class="btn btn-danger" href="#" data-href="/admin/adminDelete?id=${id}" data-toggle="modal" data-target="#myModal">
+                                            <a class="btn btn-danger" href="#" data-href="/admin/adminDelete?id=${admin.id}" data-toggle="modal" data-target="#myModal">
                                                 <i class="glyphicon glyphicon-trash icon-white"></i>
                                                 删&ensp;除
                                             </a>

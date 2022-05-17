@@ -13,4 +13,6 @@ public interface AdminService {
     ResultVo adminDelete(Integer id);
 
     ResultVo adminAdd(Admin admin);
+
+    ResultVo findById(Integer id);
 }

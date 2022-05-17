@@ -13,34 +13,54 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("admin")
 public class AdminController {
     @Autowired
     private AdminService adminService;
+    //查询全部
     @RequestMapping("adminList")
     public String adminList(Model model,@RequestParam(defaultValue = "1") Integer pageNum,
-                            @RequestParam(defaultValue = "10") Integer pageSize){
+                            @RequestParam(defaultValue = "1000000000") Integer pageSize){
         PageHelper.startPage(pageNum,pageSize);
         List<Admin> list = adminService.findAll();
         PageInfo<Admin> pageInfo = new PageInfo<>(list);
         model.addAttribute("admins",pageInfo.getList());
         return "forward:admin-list.jsp";
     }
-    @RequestMapping("adminDelete")
-    public ResultVo adminDelete(Integer id,ModelAndView mv){
-   return adminService.adminDelete(id);
 
+    //删除
+    @RequestMapping("adminDelete")
+    public String adminDelete(Integer id,ModelAndView mv){
+//        ResultVo resultVo = new ResultVo();
+        ResultVo resultVo = adminService.adminDelete(id);
+        System.err.println("resultVo"+resultVo);
+   if (resultVo.getSuccess() == true){
+      return "forward:adminList";
+   }else {
+       return "forward:adminEdit";
+   }
 
     }
+
+    //添加
     @RequestMapping("adminAdd")
     public ModelAndView adminAdd(Admin admin,ModelAndView mv){
         adminService.adminAdd(admin);
         mv.addObject("admin",admin);
         mv.setViewName("redirect:adminList");
         return mv;
+
+    }
+    @RequestMapping("findById")
+    public ModelAndView findById(Integer id, ModelAndView mv){
+      ResultVo vo = adminService.findById(id);
+        mv.addObject("id",id);
+       if (vo.getCode().equals(200)){
+           mv.setViewName("forward:admin-edit.jsp");
+       }
+       return mv;
 
     }
 

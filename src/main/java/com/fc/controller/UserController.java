@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 
@@ -20,6 +21,7 @@ public class UserController {
     @PostMapping("login")
     public String login(String username, String password, @RequestParam String usertype, HttpSession session) {
         ResultVo vo;
+        System.err.println(username);
         if (usertype.equals("user")) {
             vo = userService.login(username, password);
         } else {
@@ -29,7 +31,7 @@ public class UserController {
 
         if (vo.getSuccess()) {
             //  如果是200说明是用户登录成功
-            if (vo.getCode().equals(200)) {
+            if (vo.getCode().equals(300)) {
                 session.setAttribute("customAccount", vo.getData());
 
                 return "forward:/index2.jsp";
@@ -39,9 +41,13 @@ public class UserController {
                 return "forward:/index.jsp";
             }
         }
-
-        return null;
+       return null;
     }
+
+
+
+
+
     @RequestMapping("/logout")
     public String logout(HttpSession session,String usertype) {
         session.removeAttribute("admin"+"customAccount");

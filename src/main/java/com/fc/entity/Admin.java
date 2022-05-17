@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 public class Admin {
     private Integer id;
 
-    private String name;
+    private String username;
 
     private String password;
 
@@ -31,11 +31,11 @@ public class Admin {
     }
 
     public String getName() {
-        return name;
+        return username;
     }
 
     public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+        this.username = name == null ? null : name.trim();
     }
 
     public String getPassword() {

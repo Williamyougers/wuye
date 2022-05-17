@@ -33,9 +33,11 @@ public class UserServiceImpl implements UserService {
         List<CustomAccount> customAccounts = mapper.selectByExample(example);
 
         if (customAccounts != null && customAccounts.size() > 0) {
-            vo.setCode(200);
+            vo.setCode(300);
             vo.setSuccess(true);
             vo.setData(customAccounts.get(0));
+        }else {
+            vo.setSuccess(false);
         }
 
         return vo;

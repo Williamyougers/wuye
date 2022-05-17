@@ -20,7 +20,7 @@ public interface AdminMapper {
 
     List<Admin> selectByExample(AdminExample example);
 
-    Admin selectByPrimaryKey(Integer id);
+    int selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") Admin record, @Param("example") AdminExample example);
 
