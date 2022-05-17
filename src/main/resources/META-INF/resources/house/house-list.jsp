@@ -149,7 +149,7 @@
 
     <table class="table table-striped table-bordered bootstrap-datatable datatable responsive dataTable">
     <thead>
-    <a class="btn btn-success" href="house-add.jsp">
+    <a class="btn btn-success" href="/house-add.jsp">
                 <i class="glyphicon glyphicon-plus icon-white"></i>
                 &ensp;添&ensp;加&ensp;记&ensp;录
     </a>

@@ -2,7 +2,6 @@ package com.fc.service;
 
 import com.fc.entity.House;
 import com.fc.vo.ResultVo;
-import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -15,7 +14,7 @@ public interface HouseService {
 
     ResultVo update(House house);
 
-    ResultVo findById(Integer id);
+    House findById(Integer id);
 
     ResultVo delete(Integer id);
 }

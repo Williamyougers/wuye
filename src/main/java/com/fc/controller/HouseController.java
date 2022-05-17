@@ -53,15 +53,22 @@ public class HouseController {
         return mv;
     }
 
+    @GetMapping("findById")
+    public ModelAndView findById(Integer id,ModelAndView mv){
+        House house = houseService.findById(id);
+        System.out.println(house.getDep());
+        mv.addObject("house",house);
+        mv.setViewName("house-edit.jsp");
+
+        return mv;
+    }
+
     @PostMapping("houseEdit")
     public ModelAndView update(House house, ModelAndView mv) {
-        ResultVo id = houseService.findById(house.getId());
-        if (id.getCode() == 200) {
             ResultVo vo = houseService.update(house);
-            if (vo.getCode() == 200) {
+            if (vo.getSuccess().equals(true)) {
                 mv.addObject("houses", vo.getData());
-                mv.setViewName("forward:house-list.jsp");
-            }
+                mv.setViewName("forward:houseList");
         }
         return mv;
     }
@@ -70,7 +77,7 @@ public class HouseController {
     public ModelAndView delete(ModelAndView mv, Integer id) {
         ResultVo vo = houseService.delete(id);
         if (vo.getCode() == 200) {
-            mv.setViewName("forward:/house-list.jsp");
+            mv.setViewName("forward:houseList");
         }
         return mv;
     }
