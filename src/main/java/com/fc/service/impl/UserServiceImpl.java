@@ -1,13 +1,10 @@
 package com.fc.service.impl;
 
-import com.fc.dao.AdminMapper;
 import com.fc.dao.CustomAccountMapper;
-import com.fc.entity.Admin;
-import com.fc.entity.AdminExample;
 import com.fc.entity.CustomAccount;
 import com.fc.entity.CustomAccountExample;
 import com.fc.service.UserService;
-import com.fc.vo.ResultVo;
+import com.fc.vo.ResultVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +16,8 @@ public class UserServiceImpl implements UserService {
     private CustomAccountMapper mapper;
 
     @Override
-    public ResultVo login(String username, String password) {
-        ResultVo vo = new ResultVo();
+    public ResultVO login(String username, String password) {
+        ResultVO vo = new ResultVO();
         vo.setCode(0);
 
         CustomAccountExample example = new CustomAccountExample();

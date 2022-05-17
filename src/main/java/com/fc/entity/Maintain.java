@@ -1,5 +1,7 @@
 package com.fc.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Maintain {
@@ -11,8 +13,10 @@ public class Maintain {
 
     private String homesnumber;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date sdate;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date rdate;
 
     private Double tcost;

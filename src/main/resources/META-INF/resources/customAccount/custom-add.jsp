@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<% if (session.getAttribute("admin")==null) response.sendRedirect("../login.jsp");%>
+<% if (session.getAttribute("admin")==null) response.sendRedirect("/login.jsp");%>
     <!--
         ===
         This comment should NOT be removed.
@@ -25,7 +25,7 @@
     <meta name="author" content="Muhammad Usman">
 
     <!-- The styles -->
-    <link id="bs-css" href="../css/bootstrap-cerulean.min.css" rel="stylesheet">
+    <link id="bs-css" href="/css/bootstrap-cerulean.min.css" rel="stylesheet">
 
     <link href="../css/charisma-app.css" rel="stylesheet">
     <link href='../bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
@@ -47,7 +47,7 @@
 
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="/http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
     <!-- The fav icon -->
@@ -66,7 +66,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../index.jsp"> <img alt="Charisma Logo" src="../img/logo20.png" class="hidden-xs"/>
+            <a class="navbar-brand" href="/index.jsp"> <img alt="Charisma Logo" src="/img/logo20.png" class="hidden-xs"/>
                 <span>物业管理系统</span></a>
 
             <!-- user dropdown starts -->
@@ -76,7 +76,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="../user?action=logout">注销登录</a></li>
+                    <li><a href="../user/logout">注销登录</a></li>
                 </ul>
             </div>
             <!-- user dropdown ends -->
@@ -96,12 +96,12 @@
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">功能</li>
 						<li><a class="ajax-link" href="../index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
-							<li><a class="ajax-link" href="../admin?action=adminList"><i class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="../main?action=maintainList"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="../notice?action=noticelist"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="../inspection?action=inspectionList"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
-							<li class="active"><a class="ajax-link" href="../custom?action=customAccountList"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="../house?action=houseList"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
+							<li><a class="ajax-link" href="../admin/adminList"><i class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
+							<li><a class="ajax-link" href="../maintain/maintainList"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
+							<li><a class="ajax-link" href="../notice/noticelist"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
+							<li><a class="ajax-link" href="../inspection/inspectionList"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
+							<li class="active"><a class="ajax-link" href="customAccount/customAccountList"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
+							<li><a class="ajax-link" href="../house/houseList"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
                         </li>
                                               
                     </ul>
@@ -116,7 +116,7 @@
             <div class="alert alert-block col-md-12">
                 <h4 class="alert-heading">Warning!</h4>
 
-                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+                <p>You need to have <a href="/http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
                     enabled to use this site.</p>
             </div>
         </noscript>
@@ -129,10 +129,10 @@
             <a href="../index.jsp">首页</a>
         </li>
         <li>
-            <a href="../custom?action=customAccountList">业主信息</a>
+            <a href="/customAccount/customAccountList">业主信息</a>
         </li>
         <li>
-            <a href="#">添加</a>
+            <a href="/customAccount/customAccountAdd">添加</a>
         </li>
     </ul>
 </div>
@@ -151,7 +151,7 @@
                 </div>
             </div>
 			<div class="box-content">
-                <form role="form" data-toggle="validator" action="../custom?action=customAccountAdd" method="post">
+                <form role="form" data-toggle="validator" action="customAccountAdd" method="post">
                     <div class="form-group">
 						<div class="input-group col-md-3">
 							<label class="control-label" >用户名*</label>
@@ -226,49 +226,49 @@
     </div>
 
     <footer class="row">
-        <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="http://usman.it" target="_blank">Muhammad
+        <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="/http://usman.it" target="_blank">Muhammad
                 Usman</a> 2012 - 2015</p>
 
         <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
-                href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
+                href="/http://usman.it/free-responsive-admin-template">Charisma</a></p>
     </footer>
 
 </div><!--/.fluid-container-->
 
 <!-- external javascript -->
-<script src="../js/validator.min.js"></script>
-<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/js/validator.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- library for cookie management -->
-<script src="../js/jquery.cookie.js"></script>
+<script src="/js/jquery.cookie.js"></script>
 <!-- calender plugin -->
-<script src='../bower_components/moment/min/moment.min.js'></script>
-<script src='../bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+<script src='/bower_components/moment/min/moment.min.js'></script>
+<script src='/bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
 <!-- data table plugin -->
-<script src='../js/jquery.dataTables.min.js'></script>
+<script src='/js/jquery.dataTables.min.js'></script>
 
 <!-- select or dropdown enhancer -->
-<script src="../bower_components/chosen/chosen.jquery.min.js"></script>
+<script src="/bower_components/chosen/chosen.jquery.min.js"></script>
 <!-- plugin for gallery image view -->
-<script src="../bower_components/colorbox/jquery.colorbox-min.js"></script>
+<script src="/bower_components/colorbox/jquery.colorbox-min.js"></script>
 <!-- notification plugin -->
-<script src="../js/jquery.noty.js"></script>
+<script src="/js/jquery.noty.js"></script>
 <!-- library for making tables responsive -->
-<script src="../bower_components/responsive-tables/responsive-tables.js"></script>
+<script src="/bower_components/responsive-tables/responsive-tables.js"></script>
 <!-- tour plugin -->
-<script src="../bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
+<script src="/bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
 <!-- star rating plugin -->
-<script src="../js/jquery.raty.min.js"></script>
+<script src="/js/jquery.raty.min.js"></script>
 <!-- for iOS style toggle switch -->
-<script src="../js/jquery.iphone.toggle.js"></script>
+<script src="/js/jquery.iphone.toggle.js"></script>
 <!-- autogrowing textarea plugin -->
-<script src="../js/jquery.autogrow-textarea.js"></script>
+<script src="/js/jquery.autogrow-textarea.js"></script>
 <!-- multiple file upload plugin -->
-<script src="../js/jquery.uploadify-3.1.min.js"></script>
+<script src="/js/jquery.uploadify-3.1.min.js"></script>
 <!-- history.js for cross-browser state change on ajax -->
-<script src="../js/jquery.history.js"></script>
+<script src="/js/jquery.history.js"></script>
 <!-- application script for Charisma demo -->
-<script src="../js/charisma.js"></script>
+<script src="/js/charisma.js"></script>
 
 
 </body>

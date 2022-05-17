@@ -34,7 +34,7 @@
     <link href='/bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
     <link href='/bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
     <link href='/bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css' rel='stylesheet'>
-    <link href='/MATE-INF/resources/static/css/j query.noty.css' rel='stylesheet'>
+    <link href='/MATE-INF/resources/static/css/jquery.noty.css' rel='stylesheet'>
     <link href='/css/noty_theme_default.css' rel='stylesheet'>
     <link href='/css/elfinder.min.css' rel='stylesheet'>
     <link href='/css/elfinder.theme.css' rel='stylesheet'>
@@ -76,7 +76,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="user?action=logout">注销登录</a></li>
+                    <li><a href="user/logout">注销登录</a></li>
                 </ul>
             </div>
             <!-- user dropdown ends -->
@@ -95,15 +95,12 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">功能</li>
-							<li><a class="ajax-link" href="index2.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
-							<li><a class="ajax-link" href="notice?action=listforuser"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;查&ensp;询</span></a>
-							<li><a class="ajax-link" href="custom?action=change&accountid=session.getAccountid();"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;修&ensp;改&ensp;密&ensp;码</span></a>
-							<li><a class="ajax-link" href="main?action=maintainUserList&username=${customAccount.username }"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="custom?action=findById2&accountid=${customAccount.accountid }"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="house?action=findByOwnerid&ownerid=${customAccount.ownerid }"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
-                        </li>
-                                              
-                    </ul>
+							<li><a class="ajax-link" href="/index2.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
+							<li><a class="ajax-link" href="/notice/listforuser"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;查&ensp;询</span></a>
+							<li><a class="ajax-link" href="/customAccount/change&accountid=session.getAccountid();"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;修&ensp;改&ensp;密&ensp;码</span></a>
+							<li><a class="ajax-link" href="/maintain/maintainUserList&username=${customAccount.username }"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
+							<li><a class="ajax-link" href="/customAccount/findById2&accountid=${customAccount.accountid }"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
+							<li><a class="ajax-link" href="/house/findByOwnerid&ownerid=${customAccount.ownerid }"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a></li></ul>
                     
                 </div>
             </div>
