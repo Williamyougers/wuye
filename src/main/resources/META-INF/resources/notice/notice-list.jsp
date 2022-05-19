@@ -169,7 +169,7 @@
 							            <td align="center">${notice.ndate }</td>
 							            <td align="center">${notice.uper}</td>
                                         <td class="center">
-                                            <a class="btn btn-info" href="notice/noticeselect&id=${notice.id}">
+                                            <a class="btn btn-info" href="/notice/noticeselect?id=${notice.id}">
                                                 <i class="glyphicon glyphicon-edit icon-white"></i>
                                                 编&ensp;辑
                                             </a>

@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<% if (session.getAttribute("admin")==null) response.sendRedirect("META-INF/resources/login.jsp");%>
+	<% if (session.getAttribute("admin")==null) response.sendRedirect("/login.jsp");%>
     <!--
         ===
         This comment should NOT be removed.
@@ -133,7 +133,7 @@
                 <a href="/inspection/inspectionList">保安保洁</a>
             </li>
         	<li>
-            	<a href="/inspection/findById">编辑</a>
+            	<a href="/inspection/edit">编辑</a>
         	</li>
     </ul>
 </div>
@@ -152,7 +152,7 @@
                 </div>
             </div>
 			<div class="box-content">
-                <form role="form" data-toggle="validator" action="findById" method="post">
+                <form role="form" data-toggle="validator" action="edit" method="post">
 				<fieldset>
                     <div class="form-group">
 						<div class="input-group col-md-3">
@@ -254,39 +254,39 @@
 </div><!--/.fluid-container-->
 
 <!-- external javascript -->
-<script src="js/validator.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- library for cookie management -->
-<script src="js/jquery.cookie.js"></script>
-<!-- calender plugin -->
-<script src='bower_components/moment/min/moment.min.js'></script>
-<script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
-<!-- data table plugin -->
-<script src='js/jquery.dataTables.min.js'></script>
-
-<!-- select or dropdown enhancer -->
-<script src="bower_components/chosen/chosen.jquery.min.js"></script>
-<!-- plugin for gallery image view -->
-<script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
-<!-- notification plugin -->
-<script src="js/jquery.noty.js"></script>
-<!-- library for making tables responsive -->
-<script src="bower_components/responsive-tables/responsive-tables.js"></script>
-<!-- tour plugin -->
-<script src="bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
-<!-- star rating plugin -->
-<script src="js/jquery.raty.min.js"></script>
-<!-- for iOS style toggle switch -->
-<script src="js/jquery.iphone.toggle.js"></script>
-<!-- autogrowing textarea plugin -->
-<script src="js/jquery.autogrow-textarea.js"></script>
-<!-- multiple file upload plugin -->
-<script src="js/jquery.uploadify-3.1.min.js"></script>
-<!-- history.js for cross-browser state change on ajax -->
-<script src="js/jquery.history.js"></script>
-<!-- application script for Charisma demo -->
-<script src="js/charisma.js"></script>
+<script src="/js/validator.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+/
+<!-- library /for cookie management -->
+<script src="/js/jquery.cookie.js"></script>
+<!-- calender/ plugin -->
+<script src='/bower_components/moment/min/moment.min.js'></script>
+<script src='/bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+<!-- data tab/le plugin -->
+<script src='/js/jquery.dataTables.min.js'></script>
+/
+<!-- select o/r dropdown enhancer -->
+<script src="/bower_components/chosen/chosen.jquery.min.js"></script>
+<!-- plugin f/or gallery image view -->
+<script src="/bower_components/colorbox/jquery.colorbox-min.js"></script>
+<!-- notifica/tion plugin -->
+<script src="/js/jquery.noty.js"></script>
+<!-- library /for making tables responsive -->
+<script src="/bower_components/responsive-tables/responsive-tables.js"></script>
+<!-- tour plu/gin -->
+<script src="/bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
+<!-- star rat/ing plugin -->
+<script src="/js/jquery.raty.min.js"></script>
+<!-- for iOS /style toggle switch -->
+<script src="/js/jquery.iphone.toggle.js"></script>
+<!-- autogrow/ing textarea plugin -->
+<script src="/js/jquery.autogrow-textarea.js"></script>
+<!-- multiple/ file upload plugin -->
+<script src="/js/jquery.uploadify-3.1.min.js"></script>
+<!-- history./js for cross-browser state change on ajax -->
+<script src="/js/jquery.history.js"></script>
+<!-- applicat/ion script for Charisma demo -->
+<script src="/js/charisma.js"></script>
 <!-- datetime-->
 <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 <script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>

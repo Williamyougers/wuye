@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<% if (session.getAttribute("customAccount")==null) response.sendRedirect("/login.jsp");%>
+<%--	<% if (session.getAttribute("customAccount")==null) response.sendRedirect("/login.jsp");%>--%>
     <!--
         ===
         This comment should NOT be removed.
@@ -26,7 +26,7 @@
     <meta name="author" content="Muhammad Usman">
 
     <!-- The styles -->
-    <link id="bs-css" href="css/bootstrap-cerulean.min.css" rel="stylesheet">
+    <link id="bs-css" href="/css/bootstrap-cerulean.min.css" rel="stylesheet">
 
     <link href="/css/charisma-app.css" rel="stylesheet">
     <link href='/bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>

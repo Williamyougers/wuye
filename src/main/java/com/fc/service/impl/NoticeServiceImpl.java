@@ -38,6 +38,11 @@ public class NoticeServiceImpl implements NoticeService {
     }
 
     @Override
+    public List<Notice> findAll() {
+        return noticeMapper.selectByExample(null);
+    }
+
+    @Override
     public ResultVo add(Notice notice) {
         ResultVo resultVo = new ResultVo();
         int affectedRows = noticeMapper.insertSelective(notice);

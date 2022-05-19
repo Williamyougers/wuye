@@ -128,7 +128,7 @@
             <a href="/index2.jsp">首页</a>
         </li>
         <li>
-            <a href="/notice/listforuser">公告查询</a>
+            <a href="notice/listforuser">公告查询</a>
         </li>
         <li>
             <a href="#">内容</a>

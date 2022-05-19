@@ -22,6 +22,20 @@ public class NoticeController {
     private NoticeService noticeService;
 
     @RequestMapping("noticelist")
+    public ModelAndView findAll(@RequestParam(defaultValue = "1") Integer pageNum, ModelAndView mv) {
+        PageHelper.startPage(pageNum, 10000);
+
+        List<Notice> list = noticeService.findAll();
+
+        PageInfo<Notice> pageInfo = new PageInfo<>(list);
+
+        mv.addObject("notice", pageInfo.getList());
+
+        mv.setViewName("forward:user-notice-list.jsp");
+
+        return mv;
+    }
+    @RequestMapping("listforuser")
     public ModelAndView getList(@RequestParam(defaultValue = "1") Integer pageNum, ModelAndView mv) {
         PageHelper.startPage(pageNum, 10000);
 
@@ -31,7 +45,7 @@ public class NoticeController {
 
         mv.addObject("notice", pageInfo.getList());
 
-        mv.setViewName("forward:notice-list.jsp");
+        mv.setViewName("forward:user-notice-list.jsp");
 
         return mv;
     }

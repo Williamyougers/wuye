@@ -1,12 +1,18 @@
 package com.fc.entity;
 
+import com.alibaba.druid.filter.AutoLoad;
+import com.sun.javafx.beans.IDProperty;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Repository;
 
+import javax.annotation.Generated;
 import java.util.Date;
+
 @Repository
 public class Inspection {
-    private Integer id;
+
+    private Integer  id;
+
 
     private String person;
 

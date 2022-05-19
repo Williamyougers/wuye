@@ -32,11 +32,6 @@ public class InspectionServiceImpl implements InspectionService {
     }
 
     @Override
-    public int edit(Integer id) {
-        return inspectionMapper.findById(id);
-    }
-
-    @Override
     public ResultVo delete(Integer id) {
         ResultVo resultVo = new ResultVo();
         int affectedRows = inspectionMapper.deleteByPrimaryKey(id);
@@ -47,6 +42,21 @@ public class InspectionServiceImpl implements InspectionService {
             resultVo.setMessage("删除成功");
         } else {
             System.err.println("Fail");
+            resultVo.setSuccess(false);
+        }
+
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo edit(Inspection inspection) {
+        ResultVo resultVo = new ResultVo();
+        int affectedRows = inspectionMapper.updateByPrimaryKeySelective(inspection);
+        if (affectedRows > 0) {
+            resultVo.setCode(1);
+            resultVo.setSuccess(true);
+            resultVo.setMessage("修改成功");
+        } else {
             resultVo.setSuccess(false);
         }
 

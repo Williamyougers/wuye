@@ -10,9 +10,7 @@ public interface InspectionService{
 
     ResultVo add(Inspection inspection);
 
-
-
-    int edit(Integer id);
-
     ResultVo delete(Integer id);
+
+    ResultVo edit(Inspection inspection);
 }

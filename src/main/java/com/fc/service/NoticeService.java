@@ -12,4 +12,6 @@ public interface NoticeService {
     List<Notice> getList();
 
     ResultVo delete(Integer id);
+
+    List<Notice> findAll();
 }

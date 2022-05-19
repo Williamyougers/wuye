@@ -177,7 +177,7 @@
 			<td>${inspection.result}</td>
 			<td>${inspection.memo}</td>
         <td class="center">
-            <a class="btn btn-info" href="/findById&id=${inspection.id}">
+            <a class="btn btn-info" href="/inspection/edit?id=${inspection.id}">
                 <i class="glyphicon glyphicon-edit icon-white"></i>
                 编&ensp;辑
             </a>

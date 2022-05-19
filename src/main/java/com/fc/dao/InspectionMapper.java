@@ -5,6 +5,7 @@ import com.fc.entity.InspectionExample;
 import java.util.List;
 
 import com.fc.vo.ResultVo;
+import com.sun.javafx.beans.IDProperty;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -32,7 +33,7 @@ public interface InspectionMapper {
 
     int updateByPrimaryKey(Inspection record);
 
-    ResultVo updateByPrimaryKey(@Param("id") Integer id);
 
-    int findById(@Param("id") Integer id);
+
+
 }
